@@ -2,7 +2,8 @@
              [{applications,[kernel,stdlib,elixir,logger,cowboy,plug,poison]},
               {description,"simple_server"},
               {modules,['Elixir.SimpleServer',
-                        'Elixir.SimpleServer.Application']},
+                        'Elixir.SimpleServer.Application',
+                        'Elixir.SimpleServer.Router']},
               {registered,[]},
               {vsn,"0.1.0"},
               {mod,{'Elixir.SimpleServer.Application',[]}}]}.

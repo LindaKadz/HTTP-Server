@@ -8,5 +8,18 @@ defmodule SimpleServer.Router do
   plug(:match)
   plug(:dispatch)
 
-  
+  get "/hello" do
+    send_resp(conn, 200, "world")
+  end
+
+  post "/post" do
+    {:ok, body, conn} = read_body(conn)
+    body = Poison.decode!(body)
+    IO.inspect(body)
+    send_resp(conn, 201, "created: #{get_in(body, ["message"])}")
+  end
+
+  match _ do
+    send_resp(conn, 404, "sorry, not found")
+  end
 end
