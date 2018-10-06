@@ -1,5 +1,5 @@
 {application,simple_server,
-             [{applications,[kernel,stdlib,elixir,logger]},
+             [{applications,[kernel,stdlib,elixir,logger,cowboy,plug,poison]},
               {description,"simple_server"},
               {modules,['Elixir.SimpleServer',
                         'Elixir.SimpleServer.Application']},

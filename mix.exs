@@ -14,7 +14,7 @@ defmodule SimpleServer.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
+      extra_applications: [:logger, :cowboy, :plug, :poison],
       mod: {SimpleServer.Application, []}
     ]
   end
@@ -22,7 +22,9 @@ defmodule SimpleServer.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-    
+    {:cowboy, "~> 1.0.0"},
+    {:plug, "~> 1.5"},
+    {:poison, "~> 3.1"}
     ]
   end
 end
